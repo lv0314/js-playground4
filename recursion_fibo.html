@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>재귀로 피보나치 수열 구현</h1>
+    <script>
+        var fibo = function(n){
+            if(n <= 0){
+                return 0;
+            } else if(n == 1){
+                return 1;
+            }
+            return fibo(n-1) + fibo(n-2);
+        }
+        //계속해서 호출하여 계산하기 때문에 메모리 누수가 심함
+
+        var arr = [0, 1]
+        var fiboD = function(n){
+            if(arr[n] == undefined){
+                arr[n] = fiboD(n-1) + fiboD(n-2);
+            }
+            return arr[n];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>시간 측정하기</h1>
+    <script>
+        //Date.now() 활용
+        var t1 = Date.now();
+        var t2 = Date.now();
+
+        t2 - t1; //수행 시간 측정
+
+        //피보나치 수열 수행 시간 비교
+        var fibo = function(n){
+            if(n <= 0){
+                return 0;
+            } else if(n == 1){
+                return 1;
+            }
+            return fibo(n-1) + fibo(n-2);
+        };
+
+        var arr = [0, 1]
+        var fiboD = function(n){
+            if(arr[n] == undefined){
+                arr[n] = fiboD(n-1) + fiboD(n-2);
+            }
+            return arr[n];
+        };
+
+        var fiboT1 = Date.now();
+        fibo(40);
+        var fiboT2 = Date.now();
+        console.log("Fibo : " + (fiboT2-fiboT1) + "ms");
+
+        var fiboDT1 = Date.now();
+        fiboD(40);
+        var fiboDT2 = Date.now();
+        console.log("FiboD : " + (fiboDT2-fiboDT1) + "ms");
+
+    </script>
+</body>
+</html>

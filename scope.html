@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>스코프</h1>
+    <script>
+        //전역 변수
+        var a = 10;
+        var foo = function(){
+            //지역 변수
+            var b = 25;
+            console.log(a);
+            console.log(b);
+        }
+        foo(); //10 25
+
+        b; //에러
+
+        //자동 전역 변수
+        var foo2 = function(){
+            c = 30;
+            console.log(c);
+        }
+
+        foo2() ; //30
+        c; //30 값이 나오게 됨 var로 선언해 줘야함
+
+        function foo3 (v){
+            console.log(v);
+        }
+
+        foo3(25); //25 매개 변수는 일종의 지역 변수와 같음
+
+        for (var i = 0; i < 5; i++){
+            console.log(i);
+        }
+
+        i; //5 전역 변수가 됨
+
+        var foo4 = function(){
+            for(var j = 0; j < 5; j++){
+                console.log(j); //0 1 2 3 4
+            }
+            console.log(j);//5
+        }
+
+        j; //에러 지역 변수 이므로
+
+        //const와 let
+        //const 1.값을 바꿀 수 없음 2.재선언 불가 읽기 전용
+        const x = 10;
+
+        //let 1.값을 바꿀 수 있음 2.재선언 불가 읽기 쓰기 겸용
+        //블록 스코프
+        let y = 20;
+
+        for(let k = 0; k < 5; k++){
+            console.log(k);
+        }
+
+        k; //not defined에러 
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>재귀의 기초</h1>
+    <script>
+        var countdown = function(n){
+            for(let i = n; i > 0; i--){
+                console.log(i);
+            }
+            console.log("Fire!");
+        };
+
+        var countdownR = function(n){
+            if(n <= 0){
+                console.log("Fire!");
+                return;
+            }
+            console.log(n);
+            countdownR(n - 1);
+        };
+
+        //재귀로 a부터 b까지 합
+        var addR = function(a, b){
+            if(a > b){
+                return NaN;
+            }else if(a == b){
+                return b;
+            }
+            return a + add(a+1, b);
+        };
+
+        //재귀로 팩토리얼
+        var fact = function(n){
+            if(n < 0){
+                return;
+            }else if (n == 1 || n == 0){
+                return 1;
+            }
+            return n * fact(n-1);
+        }
+
+    </script>
+</body>
+</html>
