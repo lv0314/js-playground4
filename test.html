@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GUI 계산기 구현</h1>
+    <p id="display"></p>
+    
+    <div id="btn1">
+        <button id="7" onclick="clickNum()">7</button>
+        <button id="8" onclick="clickNum()">8</button>
+        <button id="9" onclick="clickNum()">9</button>
+        <button id="div" onclick="clickOther()">/</button>
+    </div>
+    <div id="btn2">
+        <button id="4" onclick="clickNum()">4</button>
+        <button id="5" onclick="clickNum()">5</button>
+        <button id="6" onclick="clickNum()">6</button>
+        <button id="mul" onclick="clickOther()">*</button>
+    </div>
+    <div id="btn3">
+        <button id="1" onclick="clickNum()">1</button>
+        <button id="2" onclick="clickNum()">2</button>
+        <button id="3" onclick="clickNum()">3</button>
+        <button id="sub" onclick="clickOther()">-</button>
+    </div>
+    <div id="btn4">
+        <button id="del" onclick="clickOther()">del</button>
+        <button id="0" onclick="clickNum()">0</button>
+        <button id="eq" onclick="clickOther()">=</button>
+        <button id="plus" onclick="clickOther()">+</button>
+    </div>
+
+    <script src="calc_GUI.js"></script>
+</body>
+</html>
