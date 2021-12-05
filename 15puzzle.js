@@ -3,9 +3,10 @@ var getBtn = document.getElementsByClassName("btns");
 var storage = [];
 
 function nums(){
-    for(i = 1; i < 17; i++){
+    for(i = 1; i < 16; i++){
         storage.push(i);
     }
+    storage.push("bl");
 }
 
 function createBtn(){
@@ -20,19 +21,30 @@ function setBtn(btn){
 }
 
 function createBtns(){
-    for (var i = 0; i < 16; i++){
+    for (var i = 0; i < 15; i++){
         var btns = setBtn(createBtn());
         btns.innerHTML = storage[i];
         if((i % 4) == 3){
             btnSpace.innerHTML += "<br>";
         }   
     }
+    var btnBlank = setBtn(createBtn());
+    btnBlank.innerHTML = "bl";
+    btnBlank.style.color = "red";
+    btnBlank.setAttribute("id", "blank")
+}
+
+function setBlank(){
+    var idxBl = storage.indexOf("bl");
+    getBtn[idxBl].style.color = "red";
 }
 
 function renew(){
     for(var i = 0; i < 16; i++){
         getBtn[i].innerHTML = storage[i]
+        getBtn[i].style.color = "black";
     }
+    setBlank();
 }
 
 function swtIdx(a, b){
@@ -51,7 +63,7 @@ function swtBtn(a, b){
 function clickNum(){
     var t = Number(this.innerHTML);
     var index = storage.indexOf(t);
-    var index16 = storage.indexOf(16);
+    var index16 = storage.indexOf("bl");
     swtBtn(index, index16);
 }
 
@@ -84,7 +96,7 @@ function createOpbtns(){
 }
 
 function opSolve(){
-    var ans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    var ans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, "bl"]
     for(i = 0; i < 16; i++){
         if(storage[i] !== ans[i]){
             return false;
